@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :members do
     get "search", on: :collection
   end
+  
+  resource :session, only: [:create, :destroy]
 end
 
