@@ -1,12 +1,17 @@
 class MembersController < ApplicationController
+  before_action :login_required
+
   # 会員一覧
   def index
     @members = Member.order("number")
+      .page(params[:page]).per(15)
   end
 
   # 検索
   def search
     @members = Member.search(params[:q])
+      .page(params[:page]).per(15)
+
     render "index"
   end
 
@@ -17,7 +22,7 @@ class MembersController < ApplicationController
 
   # 新規作成フォーム
   def new
-    @member = Member.new(birthday: Date.new(1920, 1, 1))
+    @member = Member.new(birthday: Date.new(1980, 1, 1))
   end
 
   # 編集フォーム
