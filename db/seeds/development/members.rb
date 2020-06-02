@@ -10,8 +10,8 @@ gnames = ["太郎", "次郎", "花子"]
     birthday: "1981-12-01",
     sex: [1, 1, 2][idx % 3],
     administrator: (idx == 0),
-    password: "asagao!",
-    password_confirmation: "asagao!"
+    password: "abc123",
+    password_confirmation: "abc123"
   )
 end
 
