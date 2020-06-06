@@ -20,6 +20,8 @@ module Blog
     
     config.action_controller.permit_all_parameters = false
     
-    
+    config.exceptions_app = ->(env) do
+      ErrorsController.action(:show).call(env)
+    end    
   end
 end
