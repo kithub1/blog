@@ -6,7 +6,7 @@ ja:
       entry: ブログ
     attributes:
       member:
-        number: 番号
+        number: 会員番号
         name: ユーザー名
         full_name: 氏名
         sex: 性別

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.visible.order(released_at: :desc)
     @articles = @articles.open_to_the_public unless current_member    
-    @articles = Article.order(released_at: :desc)
+    @articles = Article.order(released_at: :desc).page(params[:page]).per(5)
   end
 
   # 記事詳細

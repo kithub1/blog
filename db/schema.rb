@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_062837) do
+ActiveRecord::Schema.define(version: 2020_06_14_141246) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2020_06_06_062837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.integer "member_id"
+    t.float "time"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_studies_on_member_id"
   end
 
   create_table "votes", force: :cascade do |t|
