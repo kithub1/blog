@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "top#index"
   get "about" => "top#about", as: "about"
+
+  post "study" => "study#create"
+
+  resources :study
+
   
   resources :members , only: [:index, :show] do
     get "search", on: :collection

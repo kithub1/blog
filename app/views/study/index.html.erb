@@ -1,0 +1,24 @@
+<% @page_title = "勉強時間" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="contents">
+  <div class="input_time">
+  <%= form_with model: @study, url: study_path do |f| %>
+    <h3>
+      今日の日付を入力してください！
+    </h3>
+    <%= f.date_select :date %>
+    <h3>
+      今日のプログラミング学習時間を入力してください！
+    </h3>
+    <%= f.text_area :time, placeholder: "小数点第一位まで可！", size: "40x5" %>
+    <%= f.submit "送信",class: 'submit_btn' %>
+  <% end %>
+  </div>
+  <div class="output_time">
+    <div class="balloon">
+      <p>これまでトータルで <span class="study_time"> <%= @studies %> h </span> の勉強しました！</p>
+    </div>
+  </div>
+</div>
