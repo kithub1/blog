@@ -84,6 +84,7 @@ class EntriesController < ApplicationController
       :member_id,
       :title,
       :body,
+      :URL,
       :posted_at,
       :status
     )

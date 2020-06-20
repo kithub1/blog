@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_141246) do
     t.integer "member_id", null: false
     t.string "title", null: false
     t.text "body"
+    t.string "URL"
     t.datetime "posted_at", null: false
     t.string "status", default: "draft", null: false
     t.datetime "created_at", null: false
@@ -47,12 +48,10 @@ ActiveRecord::Schema.define(version: 2020_06_14_141246) do
   end
 
   create_table "studies", force: :cascade do |t|
-    t.integer "member_id"
     t.float "time"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_studies_on_member_id"
   end
 
   create_table "votes", force: :cascade do |t|

@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root "top#index"
   get "about" => "top#about", as: "about"
-
-  post "study" => "study#create"
-
-  resources :study
-
   
+  get 'study' => 'study#index'
+  post "study" => "study#create"
+  
+
   resources :members , only: [:index, :show] do
     get "search", on: :collection
     resources :entries, only: [:index]
+    resources :studies
   end
+  
+  resources :studies
   
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]

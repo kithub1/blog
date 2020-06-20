@@ -3,8 +3,9 @@
 <h2><%= @entry.title %></h2>
 
 <%= simple_format(@entry.body) %>
-<p>今日の勉強時間:</p>
-<p>トータルの勉強時間:</p>
+
+<%= @entry.URL %>
+
 
 
 <%= render "footer", entry: @entry %>

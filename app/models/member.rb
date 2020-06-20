@@ -2,9 +2,12 @@ class Member < ApplicationRecord
   has_secure_password
   
   has_many :entries, dependent: :destroy
-  has_many :studies, dependent: :destroy
   has_many :votes, dependent: :destroy #いいね
   has_many :voted_entries, through: :votes, source: :entry
+  
+  has_many :studies, dependent: :destroy
+  has_many :recorded_study, through: :studies, source: :entry
+  
   
   validates :number, presence: true,
     numericality: {
