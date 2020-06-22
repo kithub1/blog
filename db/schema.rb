@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_141246) do
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
+    t.string "URL"
     t.datetime "released_at", null: false
     t.datetime "expired_at"
     t.boolean "member_only", default: false, null: false

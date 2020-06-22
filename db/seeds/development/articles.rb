@@ -1,11 +1,10 @@
 body =
-  "内容\n\n" +
-  "内容" +
-  "内容"
+  "サンプル\n\n" +
+  "試験情報など" 
 
-0.upto(9) do |idx|
+0.upto(8) do |idx|
   Article.create(
-    title: "勉強の記録#{idx}",
+    title: "試験情報など#{idx}",
     body: body,
     released_at: 8.days.ago.advance(days: idx),
     expired_at: 2.days.ago.advance(days: idx),

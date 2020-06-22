@@ -53,6 +53,7 @@ class Admin::ArticlesController < Admin::Base
     params.require(:article).permit(
       :title,
       :body,
+      :URL,
       :released_at,
       :no_expiration,
       :expired_at,

@@ -3,6 +3,8 @@
 
 <%= simple_format(@article.body) %>
 
+<%= @article.URL %>
+
 <div class="article-footer">
   <%= @article.released_at.strftime("%Y/%m/%d %H:%M") %>
 </div>
